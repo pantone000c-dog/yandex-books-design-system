@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle — дизайн-система Яндекс Книг</title>
+<link rel="stylesheet" href="../../tokens/variables.css">
+<link rel="stylesheet" href="../../tokens/typography.css">
+<link rel="stylesheet" href="toggle.css">
+<style>
+  body { margin:0; padding:32px; background:var(--bg); color:var(--elements);
+         font-family:var(--font-text); transition:background .2s,color .2s; }
+  .themebar { display:flex; gap:8px; flex-wrap:wrap; margin:16px 0 32px; }
+  .themebar button { padding:6px 12px; border:1px solid var(--elements-20);
+                     background:var(--menu-bg); color:var(--elements); border-radius:8px; cursor:pointer; }
+  .grid { display:grid; grid-template-columns:auto auto auto auto; gap:20px 32px; align-items:center; width:max-content; }
+  .cap { font-size:13px; opacity:.6; }
+</style>
+</head>
+<body>
+  <h1 class="ts-title-32-bold">Toggle</h1>
+  <div class="ts-text-14-regular" style="opacity:.6">Figma «🧪 Компоненты» → toggle · iOS / Android</div>
+
+  <div class="themebar">
+    <span style="align-self:center">Тема:</span>
+    <button onclick="t('white')">White</button>
+    <button onclick="t('sepia')">Sepia</button>
+    <button onclick="t('grey')">Grey</button>
+    <button onclick="t('black')">Black</button>
+    <button onclick="t('onyx')">Onyx</button>
+    <button onclick="t('onyx-black')">Onyx black</button>
+  </div>
+
+  <div class="grid">
+    <span class="cap">iOS · on</span>
+    <label class="toggle toggle--ios"><input type="checkbox" checked><span class="toggle__track"><span class="toggle__knob"></span></span></label>
+    <span class="cap">iOS · off</span>
+    <label class="toggle toggle--ios"><input type="checkbox"><span class="toggle__track"><span class="toggle__knob"></span></span></label>
+
+    <span class="cap">Android · on</span>
+    <label class="toggle toggle--android"><input type="checkbox" checked><span class="toggle__track"><span class="toggle__knob"></span></span></label>
+    <span class="cap">Android · off</span>
+    <label class="toggle toggle--android"><input type="checkbox"><span class="toggle__track"><span class="toggle__knob"></span></span></label>
+
+    <span class="cap">iOS · disabled</span>
+    <label class="toggle toggle--ios"><input type="checkbox" checked disabled><span class="toggle__track"><span class="toggle__knob"></span></span></label>
+    <span class="cap">Android · disabled</span>
+    <label class="toggle toggle--android"><input type="checkbox" disabled><span class="toggle__track"><span class="toggle__knob"></span></span></label>
+  </div>
+
+  <script>
+    function t(x){ document.documentElement.setAttribute('data-theme', x); }
+    t('white');
+  </script>
+</body>
+</html>

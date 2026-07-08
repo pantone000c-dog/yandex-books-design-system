@@ -1,0 +1,44 @@
+/* ============================================================
+   Дизайн-система Яндекс Книг — типографика
+   Источник: Figma «🧪 Ядро» → страница «Text styles»
+   YS Books (Brand) — заголовочный; YS Text — интерфейсный.
+   lineHeight 100 = 100% (1.0); letterSpacing трактуется как % → em.
+   ============================================================ */
+
+:root {
+  --font-text:  "YS Text", "Yandex Sans Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-books: "YS Books", "YS Text", Georgia, "Times New Roman", serif;
+}
+
+/* --- Brand (YS Books, Semibold) --- */
+.ts-brand-48       { font-family: var(--font-books); font-weight: 600; font-size: 48px; line-height: 54px; letter-spacing: 0; }
+.ts-brand-32       { font-family: var(--font-books); font-weight: 600; font-size: 32px; line-height: 38px; letter-spacing: 0; }
+.ts-brand-28       { font-family: var(--font-books); font-weight: 600; font-size: 28px; line-height: 34px; letter-spacing: 0; }
+.ts-brand-24       { font-family: var(--font-books); font-weight: 600; font-size: 24px; line-height: 1;    letter-spacing: 0; }
+.ts-title-20-brand { font-family: var(--font-books); font-weight: 600; font-size: 20px; line-height: 1;    letter-spacing: 0; }
+
+/* --- Title (YS Text) --- */
+.ts-title-48-bold   { font-family: var(--font-text); font-weight: 700; font-size: 48px; line-height: 54px; letter-spacing: 0;      }
+.ts-title-32-bold   { font-family: var(--font-text); font-weight: 700; font-size: 32px; line-height: 38px; letter-spacing: 0;      }
+.ts-title-28-bold   { font-family: var(--font-text); font-weight: 700; font-size: 28px; line-height: 1;    letter-spacing: 0;      }
+.ts-title-24-bold   { font-family: var(--font-text); font-weight: 700; font-size: 24px; line-height: 28px; letter-spacing: 0;      }
+.ts-title-48-medium { font-family: var(--font-text); font-weight: 500; font-size: 48px; line-height: 54px; letter-spacing: 0.01em; }
+.ts-title-32-medium { font-family: var(--font-text); font-weight: 500; font-size: 32px; line-height: 38px; letter-spacing: 0;      }
+.ts-title-28-medium { font-family: var(--font-text); font-weight: 500; font-size: 28px; line-height: 1;    letter-spacing: 0;      }
+.ts-title-24-medium { font-family: var(--font-text); font-weight: 500; font-size: 24px; line-height: 1;    letter-spacing: 0;      }
+
+/* --- Text (YS Text) --- */
+.ts-text-18-bold    { font-family: var(--font-text); font-weight: 700; font-size: 18px; line-height: 1; letter-spacing: 0.01em; }
+.ts-text-16-bold    { font-family: var(--font-text); font-weight: 700; font-size: 16px; line-height: 1; letter-spacing: 0.01em; }
+.ts-text-14-bold    { font-family: var(--font-text); font-weight: 700; font-size: 14px; line-height: 1; letter-spacing: 0.01em; }
+.ts-text-12-bold    { font-family: var(--font-text); font-weight: 700; font-size: 12px; line-height: 1; letter-spacing: 0.01em; }
+.ts-text-10-bold    { font-family: var(--font-text); font-weight: 700; font-size: 10px; line-height: 1; letter-spacing: 0.01em; }
+.ts-text-18-medium  { font-family: var(--font-text); font-weight: 500; font-size: 18px; line-height: 1; letter-spacing: 0.01em; }
+.ts-text-16-medium  { font-family: var(--font-text); font-weight: 500; font-size: 16px; line-height: 1; letter-spacing: 0.01em; }
+.ts-text-14-medium  { font-family: var(--font-text); font-weight: 500; font-size: 14px; line-height: 1; letter-spacing: 0.01em; }
+.ts-text-12-medium  { font-family: var(--font-text); font-weight: 500; font-size: 12px; line-height: 1; letter-spacing: 0.01em; }
+.ts-text-10-medium  { font-family: var(--font-text); font-weight: 500; font-size: 10px; line-height: 1; letter-spacing: 0.02em; }
+.ts-text-18-regular { font-family: var(--font-text); font-weight: 400; font-size: 18px; line-height: 1; letter-spacing: 0.02em; }
+.ts-text-16-regular { font-family: var(--font-text); font-weight: 400; font-size: 16px; line-height: 1; letter-spacing: 0.02em; }
+.ts-text-14-regular { font-family: var(--font-text); font-weight: 400; font-size: 14px; line-height: 1; letter-spacing: 0.02em; }
+.ts-text-12-regular { font-family: var(--font-text); font-weight: 400; font-size: 12px; line-height: 1; letter-spacing: 0.02em; }

@@ -1,0 +1,9 @@
+{
+  "codeConnect": {
+    "parser": "html",
+    "documentUrlSubstitutions": {
+      "<CORE_FILE>": "https://www.figma.com/design/O3n7CfrOYzFA3HaFn8zilB",
+      "<COMPONENTS_FILE>": "https://www.figma.com/design/19xJVW6drCREmRWGXnBCeA"
+    }
+  }
+}

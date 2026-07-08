@@ -1,0 +1,62 @@
+/* ============================================================
+   Компонент: Icon
+   Источник: Figma «🧪 Ядро» → canvas Icons (9973:66041) + yandex-plus из кнопок
+   fileKey O3n7CfrOYzFA3HaFn8zilB
+   Метод: CSS mask + currentColor → иконка красится через `color`,
+   размер через класс. SVG в ./svg/ (currentColor, размер 24, outline/fill).
+   Использование:
+     <span class="icon icon-star-outline"></span>
+     <span class="icon icon-16 icon-heart-fill" style="color:var(--brand-3)"></span>
+   ============================================================ */
+
+.icon {
+  display: inline-block;
+  width: 24px; height: 24px;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+          mask: var(--icon) center / contain no-repeat;
+  vertical-align: middle;
+  flex: 0 0 auto;
+}
+.icon-12 { width: 12px; height: 12px; }
+.icon-16 { width: 16px; height: 16px; }
+.icon-20 { width: 20px; height: 20px; }
+.icon-32 { width: 32px; height: 32px; }
+.icon-48 { width: 48px; height: 48px; }
+
+/* --- Иконки --- */
+.icon-audiobook-outline { --icon: url("svg/audiobook-outline.svg"); }
+.icon-bell-fill { --icon: url("svg/bell-fill.svg"); }
+.icon-bell-outline { --icon: url("svg/bell-outline.svg"); }
+.icon-book-fill { --icon: url("svg/book-fill.svg"); }
+.icon-book-outline { --icon: url("svg/book-outline.svg"); }
+.icon-bookmark-fill { --icon: url("svg/bookmark-fill.svg"); }
+.icon-bookmark-outline { --icon: url("svg/bookmark-outline.svg"); }
+.icon-dislike-fill { --icon: url("svg/dislike-fill.svg"); }
+.icon-dislike-outline { --icon: url("svg/dislike-outline.svg"); }
+.icon-download-fill { --icon: url("svg/download-fill.svg"); }
+.icon-download-outline { --icon: url("svg/download-outline.svg"); }
+.icon-eye-fill { --icon: url("svg/eye-fill.svg"); }
+.icon-eye-outline { --icon: url("svg/eye-outline.svg"); }
+.icon-heart-fill { --icon: url("svg/heart-fill.svg"); }
+.icon-heart-outline { --icon: url("svg/heart-outline.svg"); }
+.icon-like-fill { --icon: url("svg/like-fill.svg"); }
+.icon-like-outline { --icon: url("svg/like-outline.svg"); }
+.icon-pause-fill { --icon: url("svg/pause-fill.svg"); }
+.icon-person-fill { --icon: url("svg/person-fill.svg"); }
+.icon-person-outline { --icon: url("svg/person-outline.svg"); }
+.icon-play-fill { --icon: url("svg/play-fill.svg"); }
+.icon-play-outline { --icon: url("svg/play-outline.svg"); }
+.icon-plus { --icon: url("svg/plus.svg"); }
+.icon-search-fill { --icon: url("svg/search-fill.svg"); }
+.icon-search-outline { --icon: url("svg/search-outline.svg"); }
+.icon-series-outline { --icon: url("svg/series-outline.svg"); }
+.icon-settings-outline { --icon: url("svg/settings-outline.svg"); }
+.icon-share-outline { --icon: url("svg/share-outline.svg"); }
+.icon-shelf-outline { --icon: url("svg/shelf-outline.svg"); }
+.icon-sound-max-fill { --icon: url("svg/sound-max-fill.svg"); }
+.icon-sound-max-outline { --icon: url("svg/sound-max-outline.svg"); }
+.icon-star-fill { --icon: url("svg/star-fill.svg"); }
+.icon-star-outline { --icon: url("svg/star-outline.svg"); }
+.icon-textbook-outline { --icon: url("svg/textbook-outline.svg"); }
+.icon-yandex-plus { --icon: url("svg/yandex-plus.svg"); }

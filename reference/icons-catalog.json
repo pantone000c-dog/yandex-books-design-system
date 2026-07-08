@@ -1,0 +1,951 @@
+{
+  "$meta": {
+    "source": "Figma «🧪 Ядро» → canvas Icons (9973:66041)",
+    "fileKey": "O3n7CfrOYzFA3HaFn8zilB",
+    "variants": "Type=outline|fill × Size=48|36|32|24|20|16|12",
+    "count": 188,
+    "note": "SVG не выгружены: get_design_context требует запись ассетов в Allowed directory (в сборке Figma настройки нет). Каталог — имена/слаги/node id категорий."
+  },
+  "icons": [
+    {
+      "ru": "Избранное",
+      "slug": "star",
+      "categoryNodeId": "9973:66148"
+    },
+    {
+      "ru": "Любимое",
+      "slug": "heart",
+      "categoryNodeId": "9973:66180"
+    },
+    {
+      "ru": "Лайк",
+      "slug": "like",
+      "categoryNodeId": "9973:66212"
+    },
+    {
+      "ru": "Дизлайк",
+      "slug": "dislike",
+      "categoryNodeId": "9973:66244"
+    },
+    {
+      "ru": "Плей",
+      "slug": "play",
+      "categoryNodeId": "9973:66276"
+    },
+    {
+      "ru": "Пауза",
+      "slug": "pause",
+      "categoryNodeId": "9973:66308"
+    },
+    {
+      "ru": "Уведомление",
+      "slug": "bell",
+      "categoryNodeId": "9973:66326"
+    },
+    {
+      "ru": "Уведомление выкл",
+      "slug": "bell-off",
+      "categoryNodeId": "9973:66358"
+    },
+    {
+      "ru": "Закладка",
+      "slug": "bookmark",
+      "categoryNodeId": "9973:66376"
+    },
+    {
+      "ru": "Закладка плюс",
+      "slug": "bookmark-plus",
+      "categoryNodeId": "9973:66408"
+    },
+    {
+      "ru": "Закладка вверх",
+      "slug": "bookmark-up",
+      "categoryNodeId": "9973:66426"
+    },
+    {
+      "ru": "Закладка влево",
+      "slug": "bookmark-left",
+      "categoryNodeId": "9973:66458"
+    },
+    {
+      "ru": "Поиск",
+      "slug": "search",
+      "categoryNodeId": "9973:66476"
+    },
+    {
+      "ru": "Книга аудио",
+      "slug": "audiobook",
+      "categoryNodeId": "9973:66508"
+    },
+    {
+      "ru": "Книга текст",
+      "slug": "textbook",
+      "categoryNodeId": "9973:66526"
+    },
+    {
+      "ru": "Полка",
+      "slug": "shelf",
+      "categoryNodeId": "9973:66544"
+    },
+    {
+      "ru": "Полка плюс",
+      "slug": "shelf-plus",
+      "categoryNodeId": "9973:66562"
+    },
+    {
+      "ru": "Полка галка",
+      "slug": "shelf-check",
+      "categoryNodeId": "9973:66580"
+    },
+    {
+      "ru": "Серии",
+      "slug": "series",
+      "categoryNodeId": "9973:66598"
+    },
+    {
+      "ru": "Книга",
+      "slug": "book",
+      "categoryNodeId": "9973:66616"
+    },
+    {
+      "ru": "Книга плюс",
+      "slug": "book-plus",
+      "categoryNodeId": "9973:66648"
+    },
+    {
+      "ru": "Книга крест",
+      "slug": "book-cross",
+      "categoryNodeId": "9973:66666"
+    },
+    {
+      "ru": "Книга грусть",
+      "slug": "book-sad",
+      "categoryNodeId": "9973:66684"
+    },
+    {
+      "ru": "Страницы",
+      "slug": "pages",
+      "categoryNodeId": "9973:66702"
+    },
+    {
+      "ru": "Копировать",
+      "slug": "copy",
+      "categoryNodeId": "9973:66720"
+    },
+    {
+      "ru": "Перенести",
+      "slug": "replace",
+      "categoryNodeId": "9973:66738"
+    },
+    {
+      "ru": "Картинка",
+      "slug": "picture",
+      "categoryNodeId": "9973:66756"
+    },
+    {
+      "ru": "Почта",
+      "slug": "mail",
+      "categoryNodeId": "9973:66774"
+    },
+    {
+      "ru": "Карта",
+      "slug": "card",
+      "categoryNodeId": "9973:66792"
+    },
+    {
+      "ru": "Удалить",
+      "slug": "trash",
+      "categoryNodeId": "9973:66810"
+    },
+    {
+      "ru": "Замок",
+      "slug": "lock",
+      "categoryNodeId": "9973:66828"
+    },
+    {
+      "ru": "Замок открыт",
+      "slug": "lock-open",
+      "categoryNodeId": "9973:66860"
+    },
+    {
+      "ru": "Подарок",
+      "slug": "gift",
+      "categoryNodeId": "9973:66878"
+    },
+    {
+      "ru": "Вход",
+      "slug": "login",
+      "categoryNodeId": "9973:66896"
+    },
+    {
+      "ru": "Загрузка",
+      "slug": "download",
+      "categoryNodeId": "9973:66914"
+    },
+    {
+      "ru": "Поделиться",
+      "slug": "share",
+      "categoryNodeId": "9973:66932"
+    },
+    {
+      "ru": "Отправить",
+      "slug": "send",
+      "categoryNodeId": "9973:66968"
+    },
+    {
+      "ru": "Флаг",
+      "slug": "flag",
+      "categoryNodeId": "9973:66986"
+    },
+    {
+      "ru": "Облако",
+      "slug": "cloud",
+      "categoryNodeId": "9973:67004"
+    },
+    {
+      "ru": "Облако скачать",
+      "slug": "cloud-download",
+      "categoryNodeId": "9973:67022"
+    },
+    {
+      "ru": "Облако загрузить",
+      "slug": "cloud-upload",
+      "categoryNodeId": "9973:67040"
+    },
+    {
+      "ru": "Облако галка",
+      "slug": "cloud-check",
+      "categoryNodeId": "9973:67058"
+    },
+    {
+      "ru": "Облако интернет",
+      "slug": "cloud-internet",
+      "categoryNodeId": "9973:67076"
+    },
+    {
+      "ru": "Облако книга",
+      "slug": "cloud-book",
+      "categoryNodeId": "9973:67094"
+    },
+    {
+      "ru": "Глаз",
+      "slug": "eye",
+      "categoryNodeId": "9973:67112"
+    },
+    {
+      "ru": "Глаз закрытый",
+      "slug": "eye-clossed",
+      "categoryNodeId": "9973:67144"
+    },
+    {
+      "ru": "Человек",
+      "slug": "person",
+      "categoryNodeId": "9973:67162"
+    },
+    {
+      "ru": "Человек",
+      "slug": "person-circle",
+      "categoryNodeId": "9973:67194"
+    },
+    {
+      "ru": "Человек плюс",
+      "slug": "person-plus",
+      "categoryNodeId": "9973:67226"
+    },
+    {
+      "ru": "Человек минус",
+      "slug": "person-minus",
+      "categoryNodeId": "9973:67244"
+    },
+    {
+      "ru": "Люди",
+      "slug": "persons",
+      "categoryNodeId": "9973:67262"
+    },
+    {
+      "ru": "Эмоции",
+      "slug": "impression",
+      "categoryNodeId": "9973:67294"
+    },
+    {
+      "ru": "Эмоции плюс",
+      "slug": "impression-plus",
+      "categoryNodeId": "9973:67312"
+    },
+    {
+      "ru": "Эмоции галка",
+      "slug": "impression-check",
+      "categoryNodeId": "9973:67330"
+    },
+    {
+      "ru": "Настройки",
+      "slug": "settings",
+      "categoryNodeId": "9973:67348"
+    },
+    {
+      "ru": "Планета",
+      "slug": "planet",
+      "categoryNodeId": "9973:67366"
+    },
+    {
+      "ru": "Назад",
+      "slug": "skip-back",
+      "categoryNodeId": "9973:67384"
+    },
+    {
+      "ru": "Вперед",
+      "slug": "skip-forward",
+      "categoryNodeId": "9973:67402"
+    },
+    {
+      "ru": "Перемотка вперед",
+      "slug": "rewind-forward",
+      "categoryNodeId": "9973:67420"
+    },
+    {
+      "ru": "Перемотка вперед числа",
+      "slug": "rewind-forward-numbers",
+      "categoryNodeId": "9973:67438"
+    },
+    {
+      "ru": "Перемотка вперед",
+      "slug": "rewind-forward-numbers",
+      "categoryNodeId": "9973:67456"
+    },
+    {
+      "ru": "Перемотка назад",
+      "slug": "rewind-back",
+      "categoryNodeId": "9973:67474"
+    },
+    {
+      "ru": "Перемотка назад числа",
+      "slug": "rewind-back-numbers",
+      "categoryNodeId": "9973:67492"
+    },
+    {
+      "ru": "Перезагрузка",
+      "slug": "reload",
+      "categoryNodeId": "9973:67528"
+    },
+    {
+      "ru": "Синхронизация",
+      "slug": "sync",
+      "categoryNodeId": "9973:67546"
+    },
+    {
+      "ru": "Загрузчик",
+      "slug": "loader",
+      "categoryNodeId": "9973:67564"
+    },
+    {
+      "ru": "Микрофон",
+      "slug": "mic",
+      "categoryNodeId": "9973:67596"
+    },
+    {
+      "ru": "Звук макс",
+      "slug": "sound-max",
+      "categoryNodeId": "9973:67628"
+    },
+    {
+      "ru": "Звук мин",
+      "slug": "sound-min",
+      "categoryNodeId": "9973:67660"
+    },
+    {
+      "ru": "Звук выкл",
+      "slug": "sound-off",
+      "categoryNodeId": "9973:67692"
+    },
+    {
+      "ru": "Ночной режим",
+      "slug": "night-mode",
+      "categoryNodeId": "9973:67724"
+    },
+    {
+      "ru": "Ночной режим авто",
+      "slug": "night-mode-auto",
+      "categoryNodeId": "9973:67756"
+    },
+    {
+      "ru": "Сетка",
+      "slug": "grid",
+      "categoryNodeId": "9973:67788"
+    },
+    {
+      "ru": "Ссылка",
+      "slug": "external-link",
+      "categoryNodeId": "9973:67820"
+    },
+    {
+      "ru": "Достижение",
+      "slug": "achievement",
+      "categoryNodeId": "9973:67838"
+    },
+    {
+      "ru": "Скорость",
+      "slug": "knob",
+      "categoryNodeId": "9973:67870"
+    },
+    {
+      "ru": "Скорость с дыркой",
+      "slug": "knob-dyrka",
+      "categoryNodeId": "9973:67888"
+    },
+    {
+      "ru": "Недавний",
+      "slug": "recent",
+      "categoryNodeId": "9973:67906"
+    },
+    {
+      "ru": "Время",
+      "slug": "time",
+      "categoryNodeId": "9973:67924"
+    },
+    {
+      "ru": "Таймер",
+      "slug": "timer",
+      "categoryNodeId": "9973:67956"
+    },
+    {
+      "ru": "Перевод",
+      "slug": "translate",
+      "categoryNodeId": "9973:67988"
+    },
+    {
+      "ru": "Типографика",
+      "slug": "edit-type",
+      "categoryNodeId": "9973:68006"
+    },
+    {
+      "ru": "Ссылка",
+      "slug": "link",
+      "categoryNodeId": "9973:68024"
+    },
+    {
+      "ru": "Блютуc",
+      "slug": "bluetooth",
+      "categoryNodeId": "9973:68042"
+    },
+    {
+      "ru": "Блютуc волны",
+      "slug": "bluetooth wave",
+      "categoryNodeId": "9973:68060"
+    },
+    {
+      "ru": "Блютуc Эирплей",
+      "slug": "bluetooth airplay",
+      "categoryNodeId": "9973:68078"
+    },
+    {
+      "ru": "Прикрепить",
+      "slug": "clip",
+      "categoryNodeId": "9973:68096"
+    },
+    {
+      "ru": "Личный",
+      "slug": "private",
+      "categoryNodeId": "9973:68114"
+    },
+    {
+      "ru": "Редактировать",
+      "slug": "pen",
+      "categoryNodeId": "9973:68132"
+    },
+    {
+      "ru": "Редактировать минус",
+      "slug": "pen-minus",
+      "categoryNodeId": "9973:68150"
+    },
+    {
+      "ru": "Заметки",
+      "slug": "notes",
+      "categoryNodeId": "9973:68168"
+    },
+    {
+      "ru": "Список",
+      "slug": "list",
+      "categoryNodeId": "9973:68186"
+    },
+    {
+      "ru": "Список глав",
+      "slug": "list-content",
+      "categoryNodeId": "9973:68204"
+    },
+    {
+      "ru": "Меню",
+      "slug": "menu",
+      "categoryNodeId": "9973:68222"
+    },
+    {
+      "ru": "Звуковая волна",
+      "slug": "sound-wave",
+      "categoryNodeId": "9973:68240"
+    },
+    {
+      "ru": "Сортировка",
+      "slug": "sort-list",
+      "categoryNodeId": "9973:68258"
+    },
+    {
+      "ru": "Сортировка",
+      "slug": "sort-list-down",
+      "categoryNodeId": "9973:68276"
+    },
+    {
+      "ru": "Сортировка",
+      "slug": "sort-list-up",
+      "categoryNodeId": "9973:68294"
+    },
+    {
+      "ru": "Сортировка",
+      "slug": "sort",
+      "categoryNodeId": "9973:68312"
+    },
+    {
+      "ru": "Фильтр",
+      "slug": "filter",
+      "categoryNodeId": "9973:68344"
+    },
+    {
+      "ru": "Стрелка поворот",
+      "slug": "arrow-turn",
+      "categoryNodeId": "9973:68376"
+    },
+    {
+      "ru": "Стрелка влево",
+      "slug": "arrow-left",
+      "categoryNodeId": "9973:68408"
+    },
+    {
+      "ru": "Стрелка вправо",
+      "slug": "arrow-right",
+      "categoryNodeId": "9973:68440"
+    },
+    {
+      "ru": "Стрелка вниз",
+      "slug": "arrow-down",
+      "categoryNodeId": "9973:68472"
+    },
+    {
+      "ru": "Стрелка вверх",
+      "slug": "arrow-top",
+      "categoryNodeId": "9973:68504"
+    },
+    {
+      "ru": "Указатель вверх",
+      "slug": "pointer-top",
+      "categoryNodeId": "9973:68536"
+    },
+    {
+      "ru": "Указатель вниз",
+      "slug": "pointer-bottom",
+      "categoryNodeId": "9973:68554"
+    },
+    {
+      "ru": "Шеврон вверх",
+      "slug": "chevron-up",
+      "categoryNodeId": "9973:68572"
+    },
+    {
+      "ru": "Шеврон вниз",
+      "slug": "chevron-down",
+      "categoryNodeId": "9973:68604"
+    },
+    {
+      "ru": "Шеврон влево",
+      "slug": "chevron-left",
+      "categoryNodeId": "9973:68636"
+    },
+    {
+      "ru": "Шеврон вправо",
+      "slug": "chevron-right",
+      "categoryNodeId": "9973:68668"
+    },
+    {
+      "ru": "Точки горизонтальные",
+      "slug": "dots",
+      "categoryNodeId": "9973:68700"
+    },
+    {
+      "ru": "Точки вертикальные",
+      "slug": "dots-vertical",
+      "categoryNodeId": "9973:68718"
+    },
+    {
+      "ru": "Минус",
+      "slug": "minus",
+      "categoryNodeId": "9973:68736"
+    },
+    {
+      "ru": "Цитата",
+      "slug": "quote",
+      "categoryNodeId": "9973:68768"
+    },
+    {
+      "ru": "Пузырь",
+      "slug": "bubble",
+      "categoryNodeId": "9973:68800"
+    },
+    {
+      "ru": "Вопрос",
+      "slug": "question",
+      "categoryNodeId": "9973:68818"
+    },
+    {
+      "ru": "Вопрос пузырь",
+      "slug": "question-bubble",
+      "categoryNodeId": "9973:68836"
+    },
+    {
+      "ru": "Вопрос круг",
+      "slug": "question-circle",
+      "categoryNodeId": "9973:68854"
+    },
+    {
+      "ru": "Галка",
+      "slug": "check",
+      "categoryNodeId": "9973:68886"
+    },
+    {
+      "ru": "Галка линия",
+      "slug": "check-line",
+      "categoryNodeId": "9973:68918"
+    },
+    {
+      "ru": "Галка круг",
+      "slug": "check-circle",
+      "categoryNodeId": "9973:68950"
+    },
+    {
+      "ru": "Закрыть",
+      "slug": "close",
+      "categoryNodeId": "9973:68982"
+    },
+    {
+      "ru": "Закрыть круг",
+      "slug": "close-circle",
+      "categoryNodeId": "9973:69014"
+    },
+    {
+      "ru": "Плюс",
+      "slug": "plus",
+      "categoryNodeId": "9973:69046"
+    },
+    {
+      "ru": "Плюс круг",
+      "slug": "plus-circle",
+      "categoryNodeId": "9973:69078"
+    },
+    {
+      "ru": "Плюс квадрат",
+      "slug": "plus-square",
+      "categoryNodeId": "9973:69110"
+    },
+    {
+      "ru": "Минус круг",
+      "slug": "minus-circle",
+      "categoryNodeId": "9973:69142"
+    },
+    {
+      "ru": "Недоступно",
+      "slug": "unavailable",
+      "categoryNodeId": "9973:69174"
+    },
+    {
+      "ru": "Восклицание",
+      "slug": "exclamation",
+      "categoryNodeId": "9973:69206"
+    },
+    {
+      "ru": "Информация",
+      "slug": "info",
+      "categoryNodeId": "9973:69238"
+    },
+    {
+      "ru": "Информация нарко",
+      "slug": "info-law",
+      "categoryNodeId": "9973:69270"
+    },
+    {
+      "ru": "Информация с дыркой",
+      "slug": "info-dyrka",
+      "categoryNodeId": "9973:69288"
+    },
+    {
+      "ru": "Загрузить",
+      "slug": "cloud-download",
+      "categoryNodeId": "9973:69306"
+    },
+    {
+      "ru": "Загрузка",
+      "slug": "cloud-downloading",
+      "categoryNodeId": "9973:69338"
+    },
+    {
+      "ru": "Чекбокс",
+      "slug": "check-box",
+      "categoryNodeId": "9973:69363"
+    },
+    {
+      "ru": "Куар",
+      "slug": "qr",
+      "categoryNodeId": "9973:69395"
+    },
+    {
+      "ru": "Яркость",
+      "slug": "brightness",
+      "categoryNodeId": "9973:69413"
+    },
+    {
+      "ru": "Во весь экран",
+      "slug": "fullscreen horizontal",
+      "categoryNodeId": "9973:69447"
+    },
+    {
+      "ru": "Во весь экран",
+      "slug": "fullscreen vertical",
+      "categoryNodeId": "9973:69465"
+    },
+    {
+      "ru": "Обратно",
+      "slug": "fullscreen-return-horizontal",
+      "categoryNodeId": "9973:69483"
+    },
+    {
+      "ru": "Обратно",
+      "slug": "fullscreen-return-vertical",
+      "categoryNodeId": "9973:69501"
+    },
+    {
+      "ru": "Шанс",
+      "slug": "chance",
+      "categoryNodeId": "9973:69519"
+    },
+    {
+      "ru": "Телефон",
+      "slug": "phone",
+      "categoryNodeId": "9973:69619"
+    },
+    {
+      "ru": "Телефон блютуз",
+      "slug": "phone-bluetooth",
+      "categoryNodeId": "9973:69637"
+    },
+    {
+      "ru": "ТВ",
+      "slug": "tv",
+      "categoryNodeId": "9973:69655"
+    },
+    {
+      "ru": "ТВ c Алисой",
+      "slug": "tv-alisa",
+      "categoryNodeId": "9973:69687"
+    },
+    {
+      "ru": "Устройства",
+      "slug": "device-tv",
+      "categoryNodeId": "9973:69719"
+    },
+    {
+      "ru": "Устройства",
+      "slug": "device-mobile",
+      "categoryNodeId": "9973:69737"
+    },
+    {
+      "ru": "Станция 1, Макс",
+      "slug": "station",
+      "categoryNodeId": "9973:69755"
+    },
+    {
+      "ru": "Станция 2",
+      "slug": "station-2",
+      "categoryNodeId": "9973:69787"
+    },
+    {
+      "ru": "Станция Миди",
+      "slug": "station-midi",
+      "categoryNodeId": "9973:69819"
+    },
+    {
+      "ru": "Станция Мини, Мини 3, Лайт 2",
+      "slug": "station-mini",
+      "categoryNodeId": "9973:69851"
+    },
+    {
+      "ru": "Станция Дуо Макс",
+      "slug": "station-duo",
+      "categoryNodeId": "9973:69883"
+    },
+    {
+      "ru": "Станция Стрит",
+      "slug": "station-street",
+      "categoryNodeId": "9973:69915"
+    },
+    {
+      "ru": "Яндекс Хаб",
+      "slug": "yandex-hub",
+      "categoryNodeId": "9973:69947"
+    },
+    {
+      "ru": "Авто",
+      "slug": "car",
+      "categoryNodeId": "9973:69979"
+    },
+    {
+      "ru": "Одноклассники",
+      "slug": "ok",
+      "categoryNodeId": "9973:70008"
+    },
+    {
+      "ru": "ВК",
+      "slug": "vk",
+      "categoryNodeId": "9973:70026"
+    },
+    {
+      "ru": "Фейсбук",
+      "slug": "facebook",
+      "categoryNodeId": "9973:70058"
+    },
+    {
+      "ru": "Твиттер X",
+      "slug": "twitter-x",
+      "categoryNodeId": "9973:70076"
+    },
+    {
+      "ru": "Твиттер",
+      "slug": "twitter",
+      "categoryNodeId": "9973:70108"
+    },
+    {
+      "ru": "Вотсап",
+      "slug": "whatsapp",
+      "categoryNodeId": "9973:70126"
+    },
+    {
+      "ru": "Телеграм",
+      "slug": "telegram",
+      "categoryNodeId": "9973:70144"
+    },
+    {
+      "ru": "Инстаграм",
+      "slug": "instagram",
+      "categoryNodeId": "9973:70162"
+    },
+    {
+      "ru": "Ютюб",
+      "slug": "youtube",
+      "categoryNodeId": "9973:70180"
+    },
+    {
+      "ru": "Дзен",
+      "slug": "zen",
+      "categoryNodeId": "9973:70198"
+    },
+    {
+      "ru": "Тикток",
+      "slug": "tiktok",
+      "categoryNodeId": "9973:70216"
+    },
+    {
+      "ru": "Эпстор",
+      "slug": "app store",
+      "categoryNodeId": "9973:70234"
+    },
+    {
+      "ru": "Гуглплей",
+      "slug": "google play",
+      "categoryNodeId": "9973:70252"
+    },
+    {
+      "ru": "Лайвжурнал",
+      "slug": "livejournal",
+      "categoryNodeId": "9973:70270"
+    },
+    {
+      "ru": "Букмейт",
+      "slug": "bookmate",
+      "categoryNodeId": "9973:70299"
+    },
+    {
+      "ru": "Голос Букмейта",
+      "slug": "bookmate-voice",
+      "categoryNodeId": "9973:70331"
+    },
+    {
+      "ru": "Яндекс Плюс",
+      "slug": "yandex-plus",
+      "categoryNodeId": "9973:70349"
+    },
+    {
+      "ru": "Интерлиньяж маленький",
+      "slug": "reader-inter-small",
+      "categoryNodeId": "9973:70378"
+    },
+    {
+      "ru": "Интерлиньяж средний",
+      "slug": "reader-inter-medium",
+      "categoryNodeId": "9973:70386"
+    },
+    {
+      "ru": "Интерлиньяж большой",
+      "slug": "reader-inter-big",
+      "categoryNodeId": "9973:70394"
+    },
+    {
+      "ru": "Отступы маленькие",
+      "slug": "reader-margin-small",
+      "categoryNodeId": "9973:70402"
+    },
+    {
+      "ru": "Отступы средние",
+      "slug": "reader-margin-medium",
+      "categoryNodeId": "9973:70410"
+    },
+    {
+      "ru": "Отступы большие",
+      "slug": "reader-margin-big",
+      "categoryNodeId": "9973:70418"
+    },
+    {
+      "ru": "Выравнивание влево",
+      "slug": "reader-align-left",
+      "categoryNodeId": "9973:70426"
+    },
+    {
+      "ru": "Выравнивание по ширине",
+      "slug": "reader-align-width",
+      "categoryNodeId": "9973:70434"
+    },
+    {
+      "ru": "ИИ",
+      "slug": "ai-comet",
+      "categoryNodeId": "9973:70453"
+    },
+    {
+      "ru": "ИИ",
+      "slug": "ai",
+      "categoryNodeId": "9973:70513"
+    },
+    {
+      "ru": "ИИ",
+      "slug": "small-star-ai",
+      "categoryNodeId": "9973:70531"
+    },
+    {
+      "ru": "ИИ",
+      "slug": "recapture",
+      "categoryNodeId": "9973:70549"
+    },
+    {
+      "ru": "ИИ",
+      "slug": "persons",
+      "categoryNodeId": "9973:70567"
+    },
+    {
+      "ru": "ИИ",
+      "slug": "neurochat",
+      "categoryNodeId": "9973:70621"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icons — дизайн-система Яндекс Книг</title>
+<link rel="stylesheet" href="../../tokens/variables.css">
+<link rel="stylesheet" href="../../tokens/typography.css">
+<link rel="stylesheet" href="icon.css">
+<style>
+  body { margin:0; padding:32px; background:var(--bg); color:var(--elements);
+         font-family:var(--font-text); transition:background .2s,color .2s; }
+  .bar { display:flex; gap:8px; flex-wrap:wrap; margin:16px 0 24px; align-items:center; }
+  .bar button { padding:6px 12px; border:1px solid var(--elements-20);
+                background:var(--menu-bg); color:var(--elements); border-radius:8px; cursor:pointer; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:8px; }
+  .cell { display:flex; flex-direction:column; align-items:center; gap:8px; padding:16px 8px;
+          border:1px solid var(--elements-10); border-radius:12px; text-align:center; }
+  .cell .name { font-size:11px; opacity:.6; word-break:break-word; }
+</style>
+</head>
+<body>
+  <h1 class="ts-title-32-bold">Icons</h1>
+  <div class="ts-text-14-regular" style="opacity:.6">Figma «🧪 Ядро» → Icons · core-набор (24px, outline/fill) · метод CSS mask + currentColor</div>
+
+  <div class="bar">
+    <span>Тема:</span>
+    <button onclick="t('white')">White</button>
+    <button onclick="t('sepia')">Sepia</button>
+    <button onclick="t('grey')">Grey</button>
+    <button onclick="t('black')">Black</button>
+    <button onclick="t('onyx-black')">Onyx black</button>
+    <span style="margin-left:16px">Размер:</span>
+    <button onclick="sz('')">24</button>
+    <button onclick="sz('icon-16')">16</button>
+    <button onclick="sz('icon-32')">32</button>
+    <button onclick="sz('icon-48')">48</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <script>
+    const names = "audiobook-outline bell-fill bell-outline book-fill book-outline bookmark-fill bookmark-outline dislike-fill dislike-outline download-fill download-outline eye-fill eye-outline heart-fill heart-outline like-fill like-outline pause-fill person-fill person-outline play-fill play-outline search-fill search-outline series-outline settings-outline share-outline shelf-outline sound-max-fill sound-max-outline star-fill star-outline textbook-outline".split(' ');
+    let size = '';
+    function render(){
+      document.getElementById('grid').innerHTML = names.map(n =>
+        `<div class="cell"><span class="icon ${size} icon-${n}"></span><span class="name">${n}</span></div>`).join('');
+    }
+    function t(x){ document.documentElement.setAttribute('data-theme', x); }
+    function sz(c){ size=c; render(); }
+    t('white'); render();
+  </script>
+</body>
+</html>

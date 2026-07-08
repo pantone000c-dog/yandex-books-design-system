@@ -1,0 +1,93 @@
+/* ============================================================
+   Компонент: Button
+   Источник: Figma «🧪 Компоненты» → страница Buttons (node 14:1378)
+   fileKey 19xJVW6drCREmRWGXnBCeA
+   Зависит от tokens/variables.css (семантические токены темы).
+
+   Оси из Figma:
+     размер  : big 52px / medium 40px / small 32px
+     тип     : primary / secondary / plain / plus
+     контент : only (иконка) / off (текст) / one-left / one-right (иконка+текст)
+     состояние: default / disabled
+
+   Цвета заданы через семантические токены → кнопки тема-адаптивны
+   (работают под любым [data-theme]). Паддинги/ховеры — аппроксимация
+   под геометрию Figma (52/40/32, pill), уточняются при необходимости.
+   ============================================================ */
+
+.btn {
+  --btn-h: 52px;
+  --btn-pad: 24px;
+  --btn-font: 16px;
+  --btn-gap: 6px;
+
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--btn-gap);
+
+  height: var(--btn-h);
+  padding: 0 var(--btn-pad);
+  border: none;
+  border-radius: calc(var(--btn-h) / 2);   /* pill */
+
+  font-family: var(--font-text, "YS Text", sans-serif);
+  font-weight: 500;
+  font-size: var(--btn-font);
+  line-height: normal;
+  letter-spacing: 0.01em;   /* Figma: tracking 0.16px@16 / 0.14px@14 = 1% */
+  white-space: nowrap;
+
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease, opacity .15s ease;
+}
+
+.btn:focus-visible { outline: 2px solid var(--brand-purple); outline-offset: 2px; }
+
+/* --- Размеры (паддинги/шрифт выведены из точных ширин Figma-символов:
+   «только текст» big/med/small = 91/69/69, «иконка+текст» = 119/89/89.
+   medium и small делят горизонтальные метрики → отличаются только высотой). --- */
+.btn--big    { --btn-h: 52px; --btn-pad: 24px; --btn-font: 16px; --btn-gap: 8px; --btn-icon: 24px; }
+.btn--medium { --btn-h: 40px; --btn-pad: 16px; --btn-font: 14px; --btn-gap: 4px; --btn-icon: 20px; }
+.btn--small  { --btn-h: 32px; --btn-pad: 16px; --btn-font: 14px; --btn-gap: 4px; --btn-icon: 20px; }
+
+/* Асимметрия паддингов: со стороны иконки на 4px меньше (Figma: big 20/24, med/small 12/16) */
+.btn--left  { padding-left:  calc(var(--btn-pad) - 4px); }
+.btn--right { padding-right: calc(var(--btn-pad) - 4px); }
+
+/* Иконочная (only) — квадрат со скруглением в круг */
+.btn--icon { width: var(--btn-h); padding: 0; }
+
+.btn__icon { display: inline-flex; flex: 0 0 auto; }
+.btn__icon svg { display: block; width: var(--btn-icon, 24px); height: var(--btn-icon, 24px); }
+.btn__icon .icon { width: var(--btn-icon, 24px); height: var(--btn-icon, 24px); }
+
+/* --- Типы --- */
+.btn--primary   { background: var(--elements); color: var(--bg); }
+.btn--secondary { background: var(--menu-bg);  color: var(--elements); }
+.btn--plain     { background: transparent;     color: var(--elements); }
+.btn--plus {
+  /* Plus/primary — точный брендовый градиент из Figma (node 1:1000). */
+  background: linear-gradient(90deg, #FF5C4D 0%, #EB469F 26.56%, #8341EF 75%, #3F68F9 100%);
+  color: var(--common-white);
+}
+
+/* --- Ховеры (аппроксимация: лёгкое затемнение/подсветка) --- */
+.btn--primary:hover   { background: var(--elements-80); }
+.btn--secondary:hover { background: var(--elements-10); }
+.btn--plain:hover     { background: var(--elements-5); }
+.btn--plus:hover      { filter: brightness(1.06); }
+
+/* --- Disabled --- */
+.btn:disabled,
+.btn.is-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+.btn--primary:disabled,   .btn--primary.is-disabled   { background: var(--elements-10); color: var(--elements-40); }
+.btn--secondary:disabled, .btn--secondary.is-disabled { background: var(--elements-5);  color: var(--elements-40); }
+.btn--plain:disabled,     .btn--plain.is-disabled     { background: transparent;        color: var(--elements-40); }
+.btn--plus:disabled,      .btn--plus.is-disabled      { opacity: .4; }

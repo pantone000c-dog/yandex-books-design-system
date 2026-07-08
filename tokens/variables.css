@@ -1,0 +1,136 @@
+/* ============================================================
+   Дизайн-система Яндекс Книг — цветовые токены
+   Источник: Figma «🧪 Ядро», fileKey O3n7CfrOYzFA3HaFn8zilB
+   Сгенерировано из tokens/tokens.json
+   ============================================================ */
+
+/* --- Семантические токены: тема White (по умолчанию) --------
+   Переопределяются через [data-theme="..."] на любом предке.
+   elementsXX = --elements с alpha (80=CC 60=99 40=66 20=33 10=1A 5=0D). */
+:root {
+  --bg: #FFFFFF;
+  --menu-bg: #EAEAEA;
+  --elements: #1F1F1F;
+  --elements-80: #1F1F1FCC;
+  --elements-60: #1F1F1F99;
+  --elements-40: #1F1F1F66;
+  --elements-20: #1F1F1F33;
+  --elements-10: #1F1F1F1A;
+  --elements-5:  #1F1F1F0D;
+  --overlay: #00000066;
+
+  /* Quotes — светлый набор (White / Sepia / Onyx) */
+  --quote1: #FFD675;
+  --quote2: #FF8676;
+  --quote3: #86E1FF;
+  --quote4: #75F1DA;
+  --quote5: #D3D3D3;
+
+  /* --- Палитра (не зависит от темы) --- */
+  --common-green: #4FD17F;
+  --common-red:   #F74E45;
+  --common-black: #000000;
+  --common-white: #FFFFFF;
+
+  --brand-1: #FFDAEA;
+  --brand-2: #FFB56F;
+  --brand-3: #FF5D5D;
+  --brand-4: #4D0000;
+  --brand-dark-purple: #484879;
+  --brand-purple: #5F55ED;
+  --brand-mauve: #B083B2;
+  --brand-coral: #FF8676;
+
+  --brand-scarlet: #FF3554;
+  --brand-orchid: #FD9BFB;
+  --brand-fuchsia: #F14699;
+  --brand-rose: #FF6CA5;
+  --brand-crimson: #C40744;
+  --brand-pale-yellow: #FFEFE3;
+  --brand-yellow: #FFD675;
+  --brand-dust: #B08B8B;
+  --brand-mint: #75F1DA;
+  --brand-teal: #027D88;
+  --brand-sky: #86E1FF;
+  --brand-blue: #447AE5;
+  --brand-lavender: #D7A4FF;
+}
+
+/* --- Темы (режимы Figma) --- */
+[data-theme="white"] {
+  --bg: #FFFFFF;
+  --menu-bg: #EAEAEA;
+  --elements: #1F1F1F;
+  --elements-80: #1F1F1FCC;
+  --elements-60: #1F1F1F99;
+  --elements-40: #1F1F1F66;
+  --elements-20: #1F1F1F33;
+  --elements-10: #1F1F1F1A;
+  --elements-5:  #1F1F1F0D;
+  --quote1: #FFD675; --quote2: #FF8676; --quote3: #86E1FF; --quote4: #75F1DA; --quote5: #D3D3D3;
+}
+
+[data-theme="sepia"] {
+  --bg: #FAF4E1;
+  --menu-bg: #E2DCC5;
+  --elements: #5A391E;
+  --elements-80: #5A391ECC;
+  --elements-60: #5A391E99;
+  --elements-40: #5A391E66;
+  --elements-20: #5A391E33;
+  --elements-10: #5A391E1A;
+  --elements-5:  #5A391E0D;
+  --quote1: #FFD675; --quote2: #FF8676; --quote3: #86E1FF; --quote4: #75F1DA; --quote5: #D3D3D3;
+}
+
+[data-theme="onyx"] {
+  --bg: #FFFFFF;
+  --menu-bg: #FFFFFF;
+  --elements: #000000;
+  --elements-80: #000000CC;
+  --elements-60: #00000099;
+  --elements-40: #00000066;
+  --elements-20: #00000033;
+  --elements-10: #0000001A;
+  --elements-5:  #0000000D;
+  --quote1: #FFD675; --quote2: #FF8676; --quote3: #86E1FF; --quote4: #75F1DA; --quote5: #D3D3D3;
+}
+
+[data-theme="black"] {
+  --bg: #161616;
+  --menu-bg: #222222;
+  --elements: #EFEFEF;
+  --elements-80: #EFEFEFCC;
+  --elements-60: #EFEFEF99;
+  --elements-40: #EFEFEF66;
+  --elements-20: #EFEFEF33;
+  --elements-10: #EFEFEF1A;
+  --elements-5:  #EFEFEF0D;
+  --quote1: #72662D; --quote2: #74392F; --quote3: #39597F; --quote4: #346164; --quote5: #575757;
+}
+
+[data-theme="grey"] {
+  --bg: #4A4A4A;
+  --menu-bg: #353536;
+  --elements: #E3E3E3;
+  --elements-80: #E3E3E3CC;
+  --elements-60: #E3E3E399;
+  --elements-40: #E3E3E366;
+  --elements-20: #E3E3E333;
+  --elements-10: #E3E3E31A;
+  --elements-5:  #E3E3E30D;
+  --quote1: #72662D; --quote2: #74392F; --quote3: #39597F; --quote4: #346164; --quote5: #575757;
+}
+
+[data-theme="onyx-black"] {
+  --bg: #000000;
+  --menu-bg: #151515;
+  --elements: #E0E0E0;
+  --elements-80: #E0E0E0CC;
+  --elements-60: #E0E0E099;
+  --elements-40: #E0E0E066;
+  --elements-20: #E0E0E033;
+  --elements-10: #E0E0E01A;
+  --elements-5:  #E0E0E00D;
+  --quote1: #72662D; --quote2: #74392F; --quote3: #39597F; --quote4: #346164; --quote5: #575757;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дизайн-система Яндекс Книг</title>
+<link rel="stylesheet" href="tokens/variables.css">
+<link rel="stylesheet" href="tokens/typography.css">
+<style>
+  body { margin:0; padding:40px; background:var(--bg); color:var(--elements); font-family:var(--font-text); }
+  a.card { display:block; max-width:520px; margin:12px 0; padding:16px 20px; border:1px solid var(--elements-20);
+           border-radius:12px; color:inherit; text-decoration:none; background:var(--menu-bg); }
+  a.card:hover { background:var(--elements-5); }
+  .muted { opacity:.6; }
+  .sw { display:inline-block; width:40px; height:24px; border-radius:6px; margin-right:6px; vertical-align:middle; }
+</style>
+</head>
+<body>
+  <h1 class="ts-brand-32">Дизайн-система Яндекс Книг <span class="muted ts-text-14-regular">(экспериментальная)</span></h1>
+
+  <h2 class="ts-title-24-bold">Компоненты</h2>
+  <a class="card" href="components/button/button.html"><b>Button</b> <span class="muted">— primary / secondary / plain / plus · big / medium / small</span></a>
+  <a class="card" href="components/toggle/toggle.html"><b>Toggle</b> <span class="muted">— iOS / Android · on / off</span></a>
+  <a class="card" href="components/icon/icon.html"><b>Icons</b> <span class="muted">— core-набор, 33 SVG (outline/fill), CSS mask + currentColor</span></a>
+
+  <h2 class="ts-title-24-bold">Токены</h2>
+  <div class="muted ts-text-14-regular" style="margin-bottom:8px">Темы (переключаются через <code>data-theme</code> на <code>&lt;html&gt;</code>):</div>
+  <div>
+    <span class="sw" style="background:#FFFFFF;border:1px solid #ccc"></span>White
+    <span class="sw" style="background:#FAF4E1;margin-left:16px"></span>Sepia
+    <span class="sw" style="background:#4A4A4A;margin-left:16px"></span>Grey
+    <span class="sw" style="background:#161616;margin-left:16px"></span>Black
+  </div>
+  <p class="muted ts-text-14-regular">Полный набор — в <code>tokens/tokens.json</code> и <code>tokens/variables.css</code>.</p>
+</body>
+</html>

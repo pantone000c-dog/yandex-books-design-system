@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Button — дизайн-система Яндекс Книг</title>
+<link rel="stylesheet" href="../../tokens/variables.css?v=2">
+<link rel="stylesheet" href="../../tokens/typography.css?v=2">
+<link rel="stylesheet" href="../icon/icon.css?v=3">
+<link rel="stylesheet" href="button.css?v=4">
+<style>
+  body { margin: 0; padding: 32px; background: var(--bg); color: var(--elements);
+         font-family: var(--font-text); transition: background .2s, color .2s; }
+  h1 { margin: 0 0 4px; }
+  .themebar { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 32px; }
+  .themebar button { padding: 6px 12px; border: 1px solid var(--elements-20);
+                     background: var(--menu-bg); color: var(--elements); border-radius: 8px; cursor: pointer; }
+  section { margin-bottom: 28px; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .06em; opacity: .6; margin: 0 0 12px; }
+  .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tag { width: 90px; font-size: 13px; opacity: .6; }
+</style>
+</head>
+<body>
+  <h1 class="ts-title-32-bold">Button</h1>
+  <div class="ts-text-14-regular" style="opacity:.6">Figma «🧪 Компоненты» → Buttons · тема-адаптивно</div>
+
+  <div class="themebar">
+    <span class="tag" style="width:auto;align-self:center">Тема:</span>
+    <button onclick="setTheme('white')">White</button>
+    <button onclick="setTheme('sepia')">Sepia</button>
+    <button onclick="setTheme('grey')">Grey</button>
+    <button onclick="setTheme('black')">Black</button>
+    <button onclick="setTheme('onyx')">Onyx</button>
+    <button onclick="setTheme('onyx-black')">Onyx black</button>
+  </div>
+
+  <div id="demo"></div>
+
+  <script>
+    // Реальные иконки из DS: обычные кнопки — plus, plus-тип — yandex-plus (Я+ бейдж)
+    const sizes = [['big','Big 52'],['medium','Medium 40'],['small','Small 32']];
+    const types = ['primary','secondary','plain','plus'];
+    function btn(size, type, content, disabled) {
+      const glyph = type==='plus' ? 'yandex-plus' : 'plus';
+      const icon = `<span class="btn__icon"><span class="icon icon-${glyph}"></span></span>`;
+      let inner = '';
+      if (content==='only')      inner = icon;
+      else if (content==='off')  inner = 'Текст';
+      else if (content==='left') inner = icon + 'Текст';
+      else if (content==='right')inner = 'Текст' + icon;
+      const cls = ['btn','btn--'+size,'btn--'+type,
+        content==='only'?'btn--icon':'', content==='left'?'btn--left':'', content==='right'?'btn--right':'',
+        disabled?'is-disabled':''].filter(Boolean).join(' ');
+      return `<button class="${cls}" ${disabled?'disabled':''}>${inner}</button>`;
+    }
+    function render() {
+      let html = '';
+      for (const [sz, szLabel] of sizes) {
+        html += `<section><h2>${szLabel}</h2>`;
+        for (const state of [false, true]) {
+          for (const type of types) {
+            html += `<div class="row"><span class="tag">${type}${state?' · disabled':''}</span>`;
+            html += ['only','off','left','right'].map(c => btn(sz, type, c, state)).join('');
+            html += `</div>`;
+          }
+        }
+        html += `</section>`;
+      }
+      document.getElementById('demo').innerHTML = html;
+    }
+    function setTheme(t){ document.documentElement.setAttribute('data-theme', t); }
+    setTheme('white');
+    render();
+  </script>
+</body>
+</html>
