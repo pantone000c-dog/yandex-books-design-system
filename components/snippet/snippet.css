@@ -2,8 +2,13 @@
    Дизайн-система Яндекс Книг — Snippets (сниппеты)
    Источник: Figma «🧪 Компоненты», fileKey 19xJVW6drCREmRWGXnBCeA,
              страница «Snippets» (node 42:4137 / frame 54:1359).
-   Горизонтальная карточка списка: обложка + текст + трейлинг-экшен.
-   Всё на токенах из tokens/variables.css и классах typography.css.
+   Геометрия снята попиксельно через get_metadata по каждому символу
+   (координаты обложки, текста, меты, трейлинга — см. README).
+
+   Горизонтальная карточка списка: обложка 72px + текст + трейлинг-экшен.
+   Отступы 16 / gap 12 / 16. Всё на токенах variables.css + typography.css.
+   Иконки «+» и «слушатели» берутся из компонента Icon (подключить icon.css);
+   chevron-right рисуется на CSS (в core-наборе стрелки нет).
    ============================================================ */
 
 /* --- Базовая карточка ------------------------------------- */
@@ -13,7 +18,7 @@
   gap: 12px;
   box-sizing: border-box;
   width: 375px;
-  padding: 14px 16px;
+  padding: 0 16px;
   background: var(--bg);
   color: var(--elements);
   font-family: var(--font-text);
@@ -22,16 +27,15 @@
 }
 .snip:hover { background: var(--elements-5); }
 
-/* Тело — заголовок + подзаголовок + мета, забирает всё свободное место */
+/* Тело — заголовок + подзаголовок + мета */
 .snip__body {
   flex: 1 1 auto;
-  min-width: 0;                 /* чтобы ellipsis работал во flex */
+  min-width: 0;                 /* чтобы ellipsis работал внутри flex */
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
-/* Заголовок: 2 строки с обрезкой */
+/* Заголовок: 2 строки (S/14 Medium, 14/18) */
 .snip__title {
   font-weight: 500;
   font-size: 14px;
@@ -44,52 +48,74 @@
   overflow: hidden;
 }
 
-/* Подзаголовок (автор / описание): 1 строка */
+/* Подзаголовок (автор / чтец): 1 строка, S/14 Regular, +2px сверху */
 .snip__subtitle {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 16px;
   color: var(--elements-60);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.snip__subtitle .icon,
+.snip__subtitle img { flex: 0 0 auto; border-radius: 1000px; }
 
-/* Мета-строка (формат, счётчики) */
+/* Мета-строка: badge · слушатели · возраст — 18px, +8px сверху */
 .snip__meta {
+  margin-top: 8px;
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 2px;
+  height: 18px;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1;
   color: var(--elements-60);
 }
+.snip__meta .icon { color: var(--elements-40); }
 .snip__meta-item { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
 
-/* Пилюля формата: «Книга», «Аудиокнига», «Бумажная книга» и т.п. */
+/* Пилюля формата: «Книга», «Аудиокнига», «Бумажная книга» (XXS/10 Medium) */
 .snip__badge {
   display: inline-flex;
   align-items: center;
   height: 18px;
   padding: 0 6px;
-  border-radius: 4px;
+  border-radius: 6px;
   background: var(--elements-10);
   color: var(--elements-60);
   font-weight: 500;
   font-size: 10px;
   line-height: 1;
   letter-spacing: 0.02em;
-  text-transform: none;
 }
 
-/* --- Обложка ---------------------------------------------- */
+/* Возрастное ограничение «18+» — обводка, 16px */
+.snip__age {
+  display: inline-flex;
+  align-items: center;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 4px;
+  border: 1px solid var(--elements-20);
+  color: var(--elements-40);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1;
+}
+
+/* --- Обложка (везде 72px по ширине) ----------------------- */
 .snip__cover {
-  flex: 0 0 auto;
+  flex: 0 0 72px;
+  width: 72px;
   display: block;
   object-fit: cover;
-  border-radius: 6px;
   background: var(--elements-10);
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -106,34 +132,12 @@
   padding: 0;
 }
 
-/* Кнопка «плюс» (добавить в закладки) — 28px круг, глиф на CSS */
-.snip__add {
-  width: 28px;
-  height: 28px;
-  border-radius: 1000px;
-  color: var(--elements-60);
-}
-.snip__add:hover { background: var(--elements-10); color: var(--elements); }
-.snip__add { position: relative; }
-.snip__add::before,
-.snip__add::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: currentColor;
-  border-radius: 2px;
-}
-.snip__add::before { width: 14px; height: 2px; }   /* — */
-.snip__add::after  { width: 2px;  height: 14px; }   /* | */
+/* «Плюс» — иконка 24 из компонента Icon (<span class="icon icon-plus">) */
+.snip__add { width: 24px; height: 24px; color: var(--elements); }
+.snip__add:hover { color: var(--elements-60); }
 
 /* Шеврон «вправо» — на CSS (в core-наборе иконок стрелки нет) */
-.snip__chevron {
-  width: 24px;
-  height: 24px;
-  color: var(--elements-40);
-}
+.snip__chevron { width: 24px; height: 24px; color: var(--elements-40); }
 .snip__chevron::after {
   content: "";
   width: 8px;
@@ -145,7 +149,7 @@
 }
 .snip:hover .snip__chevron { color: var(--elements-60); }
 
-/* Текстовая кнопка «Выбрать» (бумажная книга — переход в магазин) */
+/* Кнопка «Выбрать» (бумажная книга) — secondary 32px, из компонента Button */
 .snip__pick {
   height: 32px;
   padding: 0 16px;
@@ -160,45 +164,50 @@
 .snip__pick:hover { background: var(--elements-20); }
 
 /* ============================================================
-   Типы сниппетов — задают размер/форму обложки и высоту карточки.
-   Высоты сверены с фреймами Figma (см. README).
+   Типы — размер/форма обложки и высота карточки (сверено с Figma).
    ============================================================ */
 
-/* Электронная книга / учебник — портретная обложка, карточка 124 */
-.snip--textbook .snip__cover { width: 64px; height: 96px; }
+/* Электронная книга / учебник — обложка 72×108, карточка 124 */
+.snip--textbook { min-height: 124px; }
+.snip--textbook .snip__cover { height: 108px; border-radius: 6px; }
 
-/* Бумажная книга — та же обложка, но трейлинг = «Выбрать» */
-.snip--paper .snip__cover { width: 64px; height: 96px; }
+/* Бумажная книга — та же обложка, трейлинг = «Выбрать» */
+.snip--paper { min-height: 124px; }
+.snip--paper .snip__cover { height: 108px; border-radius: 6px; }
 
-/* Аудиокнига — квадратная обложка, карточка 96 */
-.snip--audiobook { padding: 16px; }
-.snip--audiobook .snip__cover { width: 64px; height: 64px; border-radius: 8px; }
+/* Аудиокнига — обложка 72×72, карточка 96 */
+.snip--audiobook { min-height: 96px; }
+.snip--audiobook .snip__cover { height: 72px; border-radius: 8px; }
 
-/* Серия (книжная / аудио) — портретная обложка, трейлинг = шеврон */
-.snip--series .snip__cover { width: 64px; height: 92px; }
-.snip--series.snip--audiobook .snip__cover { width: 64px; height: 64px; border-radius: 8px; }
+/* Полка — обложка 72×72, карточка 88 */
+.snip--shelf { min-height: 88px; }
+.snip--shelf .snip__cover { height: 72px; border-radius: 8px; }
+.snip--shelf .snip__title { -webkit-line-clamp: 1; }
 
-/* Полка — маленькая квадратная обложка, карточка 88 */
-.snip--shelf { padding: 16px; }
-.snip--shelf .snip__cover { width: 56px; height: 56px; border-radius: 8px; }
+/* Категория / жанр — обложка 72×72, карточка 88 */
+.snip--category { min-height: 88px; }
+.snip--category .snip__cover { height: 72px; border-radius: 8px; }
 
-/* Категория / жанр — квадратная обложка, карточка 88 */
-.snip--category { padding: 16px; }
-.snip--category .snip__cover { width: 56px; height: 56px; border-radius: 8px; }
-
-/* Автор / пользователь — круглый аватар, карточка 88 */
+/* Автор / пользователь — круглый аватар 72, карточка 88 */
 .snip--author,
-.snip--user { padding: 16px; }
+.snip--user { min-height: 88px; }
 .snip--author .snip__cover,
-.snip--user   .snip__cover { width: 56px; height: 56px; border-radius: 1000px; }
+.snip--user   .snip__cover { height: 72px; border-radius: 1000px; }
+/* Автор без аватара — квадратный плейсхолдер вместо круга */
+.snip--author.snip--no-avatar .snip__cover { border-radius: 12px; }
+
+/* Серия (книжная / аудио) — трейлинг = шеврон */
+.snip--textbook.snip--series { min-height: 120px; }
+.snip--textbook.snip--series .snip__cover { height: 104px; }
+.snip--audiobook.snip--series { min-height: 96px; }
 
 /* ============================================================
-   Обложки-плейсхолдеры (когда картинки нет) — атомы из Figma:
-   placeholder (квадрат/круг × цвета) и genre (буква).
-   Демо работает без реальных изображений.
+   Обложки-плейсхолдеры (атомы Figma placeholder / genre) — когда
+   картинки нет; демо работает без реальных изображений.
+   Маскот «закладыш» (кот Bookmate) внутри — растровый ассет, не выгружен.
    ============================================================ */
 
-/* Плейсхолдер: цветная плашка с глифом книги (глиф опустим — цвет+радиус) */
+/* Плейсхолдер: цветная плашка (square/circle × цвета из --brand-1..4) */
 .ph {
   display: inline-flex;
   align-items: center;
@@ -207,15 +216,15 @@
   background: var(--brand-1);
   color: var(--common-white);
 }
-.ph--square { border-radius: 8px; }
-.ph--circle { border-radius: 1000px; }
+.ph--square   { border-radius: 12px; }
+.ph--circle   { border-radius: 1000px; }
 .ph--pink     { background: var(--brand-1); }   /* #FFDAEA */
 .ph--orange   { background: var(--brand-2); }   /* #FFB56F */
 .ph--red      { background: var(--brand-3); }   /* #FF5D5D */
 .ph--dark-red { background: var(--brand-4); }   /* #4D0000 */
 .ph--grey     { background: var(--elements-20); }
 
-/* Жанровая обложка: буква на цветном фоне */
+/* Жанровая обложка: буква на цветном фоне (YS Books) */
 .genre {
   display: inline-flex;
   align-items: center;
@@ -230,8 +239,7 @@
 }
 
 /* ============================================================
-   Прелоадер (skeleton) — состояние загрузки.
-   Ставится классом .snip--loading на карточку.
+   Прелоадер (skeleton) — класс .snip--loading на карточке.
    ============================================================ */
 .snip--loading { pointer-events: none; }
 .snip--loading .snip__cover,
@@ -240,6 +248,7 @@
 .snip--loading .snip__badge {
   background: var(--elements-10);
   color: transparent;
+  border-color: transparent;
   border-radius: 6px;
   animation: snip-skeleton 1.2s ease-in-out infinite;
 }

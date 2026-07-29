@@ -6,7 +6,8 @@
 <title>Snippet — дизайн-система Яндекс Книг</title>
 <link rel="stylesheet" href="../../tokens/variables.css?v=2">
 <link rel="stylesheet" href="../../tokens/typography.css?v=2">
-<link rel="stylesheet" href="snippet.css?v=1">
+<link rel="stylesheet" href="../icon/icon.css?v=3">
+<link rel="stylesheet" href="snippet.css?v=2">
 <style>
   body { margin: 0; padding: 32px; background: var(--menu-bg); color: var(--elements);
          font-family: var(--font-text); transition: background .2s, color .2s; }
@@ -19,12 +20,12 @@
   /* контейнер-список, чтобы сниппеты на фоне карточки читались */
   .list { background: var(--bg); border-radius: 16px; overflow: hidden; width: 375px; }
   .list .snip + .snip { border-top: 1px solid var(--elements-10); }
-  .atoms { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .atoms { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
 </style>
 </head>
 <body>
   <h1 class="ts-title-32-bold">Snippet</h1>
-  <div class="ts-text-14-regular" style="opacity:.6">Figma «🧪 Компоненты» → Snippets · тема-адаптивно · ширина 375</div>
+  <div class="ts-text-14-regular" style="opacity:.6">Figma «🧪 Компоненты» → Snippets · попиксельно · ширина 375 · тема-адаптивно</div>
 
   <div class="themebar">
     <span style="align-self:center;opacity:.6">Тема:</span>
@@ -39,19 +40,19 @@
   <section>
     <h2>Книги</h2>
     <div class="list">
-      <!-- Электронная книга -->
+      <!-- Электронная книга (textbook) -->
       <a class="snip snip--textbook">
         <div class="snip__cover" style="background:var(--brand-1)"></div>
         <div class="snip__body">
           <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
-          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__subtitle">Харальд Хорф</div>
           <div class="snip__meta">
             <span class="snip__badge">Книга</span>
-            <span class="snip__meta-item">4.7</span>
-            <span class="snip__meta-item">12 342</span>
+            <span class="snip__meta-item"><span class="icon icon-12 icon-person-fill"></span>256K</span>
+            <span class="snip__age">18+</span>
           </div>
         </div>
-        <button class="snip__action snip__add" aria-label="Добавить"></button>
+        <button class="snip__action snip__add" aria-label="Добавить"><span class="icon icon-plus"></span></button>
       </a>
 
       <!-- Аудиокнига -->
@@ -59,13 +60,14 @@
         <div class="snip__cover" style="background:var(--brand-2)"></div>
         <div class="snip__body">
           <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
-          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__subtitle">Харальд Хорф</div>
           <div class="snip__meta">
             <span class="snip__badge">Аудиокнига</span>
-            <span class="snip__meta-item">7 ч 04 мин</span>
+            <span class="snip__meta-item"><span class="icon icon-12 icon-person-fill"></span>256K</span>
+            <span class="snip__age">18+</span>
           </div>
         </div>
-        <button class="snip__action snip__add" aria-label="Добавить"></button>
+        <button class="snip__action snip__add" aria-label="Добавить"><span class="icon icon-plus"></span></button>
       </a>
 
       <!-- Бумажная книга -->
@@ -73,7 +75,7 @@
         <div class="snip__cover" style="background:var(--brand-3)"></div>
         <div class="snip__body">
           <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
-          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__subtitle">Харальд Хорф</div>
           <div class="snip__meta">
             <span class="snip__badge">Бумажная книга</span>
           </div>
@@ -90,7 +92,7 @@
         <div class="snip__cover" style="background:var(--brand-1)"></div>
         <div class="snip__body">
           <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
-          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__subtitle">Харальд Хорф</div>
           <div class="snip__meta"><span class="snip__meta-item">Серия · 7 книг</span></div>
         </div>
         <span class="snip__action snip__chevron"></span>
@@ -99,7 +101,7 @@
         <div class="snip__cover" style="background:var(--brand-2)"></div>
         <div class="snip__body">
           <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
-          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__subtitle">Харальд Хорф</div>
           <div class="snip__meta"><span class="snip__meta-item">Серия · 7 книг</span></div>
         </div>
         <span class="snip__action snip__chevron"></span>
@@ -114,7 +116,8 @@
         <div class="snip__cover" style="background:var(--brand-4)"></div>
         <div class="snip__body">
           <div class="snip__title">Десять книг как устроить бунт</div>
-          <div class="snip__subtitle">Полка · 10 книг</div>
+          <div class="snip__subtitle"><span class="icon icon-16 icon-person-fill"></span>Харальд Хорф</div>
+          <div class="snip__meta"><span class="snip__meta-item">Полка · 10 книг</span></div>
         </div>
         <span class="snip__action snip__chevron"></span>
       </a>
@@ -122,7 +125,7 @@
         <div class="genre snip__cover" style="font-size:24px">Ф</div>
         <div class="snip__body">
           <div class="snip__title">Десять лучших психологических книг</div>
-          <div class="snip__subtitle">Подборка · 10 книг</div>
+          <div class="snip__meta"><span class="snip__meta-item">Подборка · 10 книг</span></div>
         </div>
         <span class="snip__action snip__chevron"></span>
       </a>
@@ -136,16 +139,16 @@
         <div class="snip__cover" style="background:var(--brand-1)"></div>
         <div class="snip__body">
           <div class="snip__title">Константин Константинопольский</div>
-          <div class="snip__subtitle">Автор · 3 книги</div>
+          <div class="snip__meta"><span class="snip__meta-item">Автор · 3 книги</span></div>
         </div>
         <span class="snip__action snip__chevron"></span>
       </a>
       <!-- Автор без аватара -->
-      <a class="snip snip--author">
-        <div class="snip__cover" style="background:var(--elements-20)"></div>
+      <a class="snip snip--author snip--no-avatar">
+        <div class="ph ph--square ph--grey snip__cover"></div>
         <div class="snip__body">
           <div class="snip__title">Константин Константинопольский</div>
-          <div class="snip__subtitle">Автор · 3 книги</div>
+          <div class="snip__meta"><span class="snip__meta-item">Автор · 3 книги</span></div>
         </div>
         <span class="snip__action snip__chevron"></span>
       </a>
@@ -153,7 +156,7 @@
         <div class="snip__cover" style="background:var(--brand-2)"></div>
         <div class="snip__body">
           <div class="snip__title">Константин Константинопольский</div>
-          <div class="snip__subtitle">Пользователь</div>
+          <div class="snip__meta"><span class="snip__meta-item">Пользователь</span></div>
         </div>
         <span class="snip__action snip__chevron"></span>
       </a>
@@ -189,21 +192,20 @@
   </section>
 
   <section>
-    <h2>Атомы — плейсхолдеры обложек</h2>
+    <h2>Атомы — плейсхолдеры обложек (72×72)</h2>
     <div class="atoms">
       <span class="ph ph--square ph--pink"     style="width:72px;height:72px"></span>
       <span class="ph ph--square ph--orange"   style="width:72px;height:72px"></span>
       <span class="ph ph--square ph--red"       style="width:72px;height:72px"></span>
       <span class="ph ph--square ph--dark-red" style="width:72px;height:72px"></span>
       <span class="ph ph--square ph--grey"      style="width:72px;height:72px"></span>
-    </div>
-    <div class="atoms" style="margin-top:12px">
       <span class="ph ph--circle ph--pink"     style="width:72px;height:72px"></span>
       <span class="ph ph--circle ph--orange"   style="width:72px;height:72px"></span>
       <span class="ph ph--circle ph--red"       style="width:72px;height:72px"></span>
       <span class="ph ph--circle ph--dark-red" style="width:72px;height:72px"></span>
       <span class="ph ph--circle ph--grey"      style="width:72px;height:72px"></span>
     </div>
+    <div class="ts-text-12-regular" style="opacity:.5;margin-top:8px">Маскот «закладыш» внутри — растровый ассет из Figma, не выгружен.</div>
   </section>
 
   <section>
