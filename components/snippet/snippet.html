@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snippet — дизайн-система Яндекс Книг</title>
+<link rel="stylesheet" href="../../tokens/variables.css?v=2">
+<link rel="stylesheet" href="../../tokens/typography.css?v=2">
+<link rel="stylesheet" href="snippet.css?v=1">
+<style>
+  body { margin: 0; padding: 32px; background: var(--menu-bg); color: var(--elements);
+         font-family: var(--font-text); transition: background .2s, color .2s; }
+  h1 { margin: 0 0 4px; }
+  .themebar { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 32px; }
+  .themebar button { padding: 6px 12px; border: 1px solid var(--elements-20);
+                     background: var(--bg); color: var(--elements); border-radius: 8px; cursor: pointer; }
+  section { margin-bottom: 28px; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .06em; opacity: .6; margin: 0 0 12px; }
+  /* контейнер-список, чтобы сниппеты на фоне карточки читались */
+  .list { background: var(--bg); border-radius: 16px; overflow: hidden; width: 375px; }
+  .list .snip + .snip { border-top: 1px solid var(--elements-10); }
+  .atoms { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+</style>
+</head>
+<body>
+  <h1 class="ts-title-32-bold">Snippet</h1>
+  <div class="ts-text-14-regular" style="opacity:.6">Figma «🧪 Компоненты» → Snippets · тема-адаптивно · ширина 375</div>
+
+  <div class="themebar">
+    <span style="align-self:center;opacity:.6">Тема:</span>
+    <button onclick="setTheme('white')">White</button>
+    <button onclick="setTheme('sepia')">Sepia</button>
+    <button onclick="setTheme('grey')">Grey</button>
+    <button onclick="setTheme('black')">Black</button>
+    <button onclick="setTheme('onyx')">Onyx</button>
+    <button onclick="setTheme('onyx-black')">Onyx black</button>
+  </div>
+
+  <section>
+    <h2>Книги</h2>
+    <div class="list">
+      <!-- Электронная книга -->
+      <a class="snip snip--textbook">
+        <div class="snip__cover" style="background:var(--brand-1)"></div>
+        <div class="snip__body">
+          <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
+          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__meta">
+            <span class="snip__badge">Книга</span>
+            <span class="snip__meta-item">4.7</span>
+            <span class="snip__meta-item">12 342</span>
+          </div>
+        </div>
+        <button class="snip__action snip__add" aria-label="Добавить"></button>
+      </a>
+
+      <!-- Аудиокнига -->
+      <a class="snip snip--audiobook">
+        <div class="snip__cover" style="background:var(--brand-2)"></div>
+        <div class="snip__body">
+          <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
+          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__meta">
+            <span class="snip__badge">Аудиокнига</span>
+            <span class="snip__meta-item">7 ч 04 мин</span>
+          </div>
+        </div>
+        <button class="snip__action snip__add" aria-label="Добавить"></button>
+      </a>
+
+      <!-- Бумажная книга -->
+      <a class="snip snip--paper">
+        <div class="snip__cover" style="background:var(--brand-3)"></div>
+        <div class="snip__body">
+          <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
+          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__meta">
+            <span class="snip__badge">Бумажная книга</span>
+          </div>
+        </div>
+        <button class="snip__action snip__pick">Выбрать</button>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Серии</h2>
+    <div class="list">
+      <a class="snip snip--textbook snip--series">
+        <div class="snip__cover" style="background:var(--brand-1)"></div>
+        <div class="snip__body">
+          <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
+          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__meta"><span class="snip__meta-item">Серия · 7 книг</span></div>
+        </div>
+        <span class="snip__action snip__chevron"></span>
+      </a>
+      <a class="snip snip--audiobook snip--series">
+        <div class="snip__cover" style="background:var(--brand-2)"></div>
+        <div class="snip__body">
+          <div class="snip__title">Atomic Heart. Предыстория «Предприятия 3826»</div>
+          <div class="snip__subtitle">Харальд Хофф</div>
+          <div class="snip__meta"><span class="snip__meta-item">Серия · 7 книг</span></div>
+        </div>
+        <span class="snip__action snip__chevron"></span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Полка / Категория</h2>
+    <div class="list">
+      <a class="snip snip--shelf">
+        <div class="snip__cover" style="background:var(--brand-4)"></div>
+        <div class="snip__body">
+          <div class="snip__title">Десять книг как устроить бунт</div>
+          <div class="snip__subtitle">Полка · 10 книг</div>
+        </div>
+        <span class="snip__action snip__chevron"></span>
+      </a>
+      <a class="snip snip--category">
+        <div class="genre snip__cover" style="font-size:24px">Ф</div>
+        <div class="snip__body">
+          <div class="snip__title">Десять лучших психологических книг</div>
+          <div class="snip__subtitle">Подборка · 10 книг</div>
+        </div>
+        <span class="snip__action snip__chevron"></span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Автор / Пользователь</h2>
+    <div class="list">
+      <a class="snip snip--author">
+        <div class="snip__cover" style="background:var(--brand-1)"></div>
+        <div class="snip__body">
+          <div class="snip__title">Константин Константинопольский</div>
+          <div class="snip__subtitle">Автор · 3 книги</div>
+        </div>
+        <span class="snip__action snip__chevron"></span>
+      </a>
+      <!-- Автор без аватара -->
+      <a class="snip snip--author">
+        <div class="snip__cover" style="background:var(--elements-20)"></div>
+        <div class="snip__body">
+          <div class="snip__title">Константин Константинопольский</div>
+          <div class="snip__subtitle">Автор · 3 книги</div>
+        </div>
+        <span class="snip__action snip__chevron"></span>
+      </a>
+      <a class="snip snip--user">
+        <div class="snip__cover" style="background:var(--brand-2)"></div>
+        <div class="snip__body">
+          <div class="snip__title">Константин Константинопольский</div>
+          <div class="snip__subtitle">Пользователь</div>
+        </div>
+        <span class="snip__action snip__chevron"></span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Прелоадер (skeleton)</h2>
+    <div class="list">
+      <div class="snip snip--textbook snip--loading">
+        <div class="snip__cover"></div>
+        <div class="snip__body">
+          <div class="snip__title"></div>
+          <div class="snip__subtitle"></div>
+          <div class="snip__meta"><span class="snip__badge"></span></div>
+        </div>
+      </div>
+      <div class="snip snip--audiobook snip--loading">
+        <div class="snip__cover"></div>
+        <div class="snip__body">
+          <div class="snip__title"></div>
+          <div class="snip__subtitle"></div>
+        </div>
+      </div>
+      <div class="snip snip--author snip--loading">
+        <div class="snip__cover"></div>
+        <div class="snip__body">
+          <div class="snip__title"></div>
+          <div class="snip__subtitle"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Атомы — плейсхолдеры обложек</h2>
+    <div class="atoms">
+      <span class="ph ph--square ph--pink"     style="width:72px;height:72px"></span>
+      <span class="ph ph--square ph--orange"   style="width:72px;height:72px"></span>
+      <span class="ph ph--square ph--red"       style="width:72px;height:72px"></span>
+      <span class="ph ph--square ph--dark-red" style="width:72px;height:72px"></span>
+      <span class="ph ph--square ph--grey"      style="width:72px;height:72px"></span>
+    </div>
+    <div class="atoms" style="margin-top:12px">
+      <span class="ph ph--circle ph--pink"     style="width:72px;height:72px"></span>
+      <span class="ph ph--circle ph--orange"   style="width:72px;height:72px"></span>
+      <span class="ph ph--circle ph--red"       style="width:72px;height:72px"></span>
+      <span class="ph ph--circle ph--dark-red" style="width:72px;height:72px"></span>
+      <span class="ph ph--circle ph--grey"      style="width:72px;height:72px"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Атомы — жанровые обложки (буква)</h2>
+    <div class="atoms">
+      <span class="genre" style="width:72px;height:72px;font-size:28px">А</span>
+      <span class="genre" style="width:72px;height:72px;font-size:28px;background:var(--brand-2);color:var(--brand-4)">Б</span>
+      <span class="genre" style="width:72px;height:72px;font-size:28px;background:var(--brand-3);color:var(--common-white)">В</span>
+      <span class="genre" style="width:72px;height:72px;font-size:28px;background:var(--brand-4);color:var(--common-white)">Г</span>
+      <span class="genre" style="width:72px;height:72px;font-size:28px">A</span>
+    </div>
+  </section>
+
+  <script>
+    function setTheme(t){ document.documentElement.setAttribute('data-theme', t); }
+    setTheme('white');
+  </script>
+</body>
+</html>

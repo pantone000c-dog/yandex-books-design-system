@@ -4,7 +4,7 @@
 Чистый CSS custom properties + HTML, без сборщиков и зависимостей — под статические страницы Книг.
 
 > Статус: **в работе**. Источник — Figma Dev Mode MCP (локальный Figma Desktop).
-> Готово: токены (Ядро) + компоненты `button`, `toggle`. Остальные категории — по мере обхода.
+> Готово: токены (Ядро) + компоненты `button`, `toggle`, `icon`, `snippet`. Остальные категории — по мере обхода.
 
 ## Источники в Figma
 
@@ -50,7 +50,8 @@ reference/                          # скриншоты из Figma для св�
 | Компоненты → Buttons / `butons` (14:1378) | `components/button/` | ✅ primary/secondary/plain/plus × big/medium/small × states |
 | Компоненты → Buttons / `toggle` (23:4080) | `components/toggle/` | ✅ iOS/Android × on/off |
 | Ядро → Icons (9973:66041) | `components/icon/` + `reference/icons-catalog.json` | ✅ core-набор 33 SVG (24px, outline/fill); каталог всех 188 |
-| Компоненты → Covers, Navigation, Informers, Snippets, Meta, Avatars, Mini player, Section, Native elements | — | ⏳ не выгружено |
+| Компоненты → Snippets (42:4137 / `snippets` 54:1359) | `components/snippet/` | ✅ textbook / audiobook / paper / series / shelf / category / author / user · default + preloader · атомы placeholder/genre |
+| Компоненты → Covers, Navigation, Informers, Meta, Avatars, Mini player, Section, Native elements | — | ⏳ не выгружено |
 
 ### Точность
 Кнопки сняты **попиксельно** через `get_design_context` (после включения в Figma Desktop
@@ -70,6 +71,28 @@ reference/                          # скриншоты из Figma для св�
 Осталось приблизительным:
 - **Ховеры** — подобраны (в Figma отдельных hover-состояний нет).
 - Иконки экспортированы «edge-to-edge» (внутренние инсеты Figma не сохранены) — норма для icon-набора.
+
+### Сниппеты (компонент Snippet)
+Горизонтальные карточки списка: обложка + текст (заголовок 2 строки, автор, мета) + трейлинг-экшен.
+Всё на токенах: цвета — `var(--elements*/--bg/--menu-bg/--brand-*)`, размеры/скругления — из фреймов Figma.
+
+- **Типы** (класс `.snip--<type>`): `textbook`, `audiobook`, `paper`, `series` (+ комбинируется с
+  textbook/audiobook), `shelf`, `category`, `author`, `user`. Плюс состояние `.snip--loading` (skeleton).
+- **Трейлинг:** книги — круглая кнопка «+» (`.snip__add`); бумажная — кнопка «Выбрать» (`.snip__pick`);
+  серия/полка/категория/автор/пользователь — шеврон (`.snip__chevron`).
+- **Обложки-атомы:** `.ph` (плейсхолдер square/circle × pink/orange/red/dark-red/grey на `--brand-1..4`)
+  и `.genre` (буква на цветном фоне). Позволяют демо работать без реальных изображений.
+- **Высоты сверены с Figma:** textbook/paper 124, textbook series 120, audiobook(+series) 96,
+  shelf/category 88, author/user 88 (обложки: книга 64×96, аудио 64×64, полка/категория 56×56,
+  аватар 56×56 круг). Ширина карточки — 375.
+
+Осталось приблизительным:
+- **`get_design_context` по узлам сниппетов не отдался** (в сессии слетел активный таб Figma Desktop) —
+  геометрия внутренних отступов/gap взята из скриншота фрейма + `get_variable_defs` + размеров фреймов
+  из `get_metadata`, а не попиксельно. При доступной Figma перепроверить `padding`/`gap` через design context.
+- **Шеврон «вправо» и глиф «+»** нарисованы на CSS (в core-наборе иконок стрелки нет) — форма условная.
+- **Логотипы магазинов** (`snippet company`: ozon / market / alpina / читай-город) и глиф книги внутри
+  плейсхолдера — SVG-ассеты не выгружены, добавить тем же методом, что и иконки.
 
 ### Иконки (компонент Icon)
 - 33 SVG core-набора выгружены из «Ядра» после включения Allowed-directories-записи

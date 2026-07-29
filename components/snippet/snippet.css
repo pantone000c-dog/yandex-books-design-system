@@ -1,0 +1,253 @@
+/* ============================================================
+   Дизайн-система Яндекс Книг — Snippets (сниппеты)
+   Источник: Figma «🧪 Компоненты», fileKey 19xJVW6drCREmRWGXnBCeA,
+             страница «Snippets» (node 42:4137 / frame 54:1359).
+   Горизонтальная карточка списка: обложка + текст + трейлинг-экшен.
+   Всё на токенах из tokens/variables.css и классах typography.css.
+   ============================================================ */
+
+/* --- Базовая карточка ------------------------------------- */
+.snip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  width: 375px;
+  padding: 14px 16px;
+  background: var(--bg);
+  color: var(--elements);
+  font-family: var(--font-text);
+  text-decoration: none;
+  cursor: pointer;
+}
+.snip:hover { background: var(--elements-5); }
+
+/* Тело — заголовок + подзаголовок + мета, забирает всё свободное место */
+.snip__body {
+  flex: 1 1 auto;
+  min-width: 0;                 /* чтобы ellipsis работал во flex */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Заголовок: 2 строки с обрезкой */
+.snip__title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: var(--elements);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Подзаголовок (автор / описание): 1 строка */
+.snip__subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--elements-60);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Мета-строка (формат, счётчики) */
+.snip__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--elements-60);
+}
+.snip__meta-item { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+
+/* Пилюля формата: «Книга», «Аудиокнига», «Бумажная книга» и т.п. */
+.snip__badge {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--elements-10);
+  color: var(--elements-60);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* --- Обложка ---------------------------------------------- */
+.snip__cover {
+  flex: 0 0 auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--elements-10);
+  overflow: hidden;
+}
+
+/* --- Трейлинг-экшены -------------------------------------- */
+.snip__action {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--elements);
+  padding: 0;
+}
+
+/* Кнопка «плюс» (добавить в закладки) — 28px круг, глиф на CSS */
+.snip__add {
+  width: 28px;
+  height: 28px;
+  border-radius: 1000px;
+  color: var(--elements-60);
+}
+.snip__add:hover { background: var(--elements-10); color: var(--elements); }
+.snip__add { position: relative; }
+.snip__add::before,
+.snip__add::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: currentColor;
+  border-radius: 2px;
+}
+.snip__add::before { width: 14px; height: 2px; }   /* — */
+.snip__add::after  { width: 2px;  height: 14px; }   /* | */
+
+/* Шеврон «вправо» — на CSS (в core-наборе иконок стрелки нет) */
+.snip__chevron {
+  width: 24px;
+  height: 24px;
+  color: var(--elements-40);
+}
+.snip__chevron::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  margin-left: -3px;
+}
+.snip:hover .snip__chevron { color: var(--elements-60); }
+
+/* Текстовая кнопка «Выбрать» (бумажная книга — переход в магазин) */
+.snip__pick {
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 1000px;
+  background: var(--menu-bg);
+  color: var(--elements);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+.snip__pick:hover { background: var(--elements-20); }
+
+/* ============================================================
+   Типы сниппетов — задают размер/форму обложки и высоту карточки.
+   Высоты сверены с фреймами Figma (см. README).
+   ============================================================ */
+
+/* Электронная книга / учебник — портретная обложка, карточка 124 */
+.snip--textbook .snip__cover { width: 64px; height: 96px; }
+
+/* Бумажная книга — та же обложка, но трейлинг = «Выбрать» */
+.snip--paper .snip__cover { width: 64px; height: 96px; }
+
+/* Аудиокнига — квадратная обложка, карточка 96 */
+.snip--audiobook { padding: 16px; }
+.snip--audiobook .snip__cover { width: 64px; height: 64px; border-radius: 8px; }
+
+/* Серия (книжная / аудио) — портретная обложка, трейлинг = шеврон */
+.snip--series .snip__cover { width: 64px; height: 92px; }
+.snip--series.snip--audiobook .snip__cover { width: 64px; height: 64px; border-radius: 8px; }
+
+/* Полка — маленькая квадратная обложка, карточка 88 */
+.snip--shelf { padding: 16px; }
+.snip--shelf .snip__cover { width: 56px; height: 56px; border-radius: 8px; }
+
+/* Категория / жанр — квадратная обложка, карточка 88 */
+.snip--category { padding: 16px; }
+.snip--category .snip__cover { width: 56px; height: 56px; border-radius: 8px; }
+
+/* Автор / пользователь — круглый аватар, карточка 88 */
+.snip--author,
+.snip--user { padding: 16px; }
+.snip--author .snip__cover,
+.snip--user   .snip__cover { width: 56px; height: 56px; border-radius: 1000px; }
+
+/* ============================================================
+   Обложки-плейсхолдеры (когда картинки нет) — атомы из Figma:
+   placeholder (квадрат/круг × цвета) и genre (буква).
+   Демо работает без реальных изображений.
+   ============================================================ */
+
+/* Плейсхолдер: цветная плашка с глифом книги (глиф опустим — цвет+радиус) */
+.ph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: var(--brand-1);
+  color: var(--common-white);
+}
+.ph--square { border-radius: 8px; }
+.ph--circle { border-radius: 1000px; }
+.ph--pink     { background: var(--brand-1); }   /* #FFDAEA */
+.ph--orange   { background: var(--brand-2); }   /* #FFB56F */
+.ph--red      { background: var(--brand-3); }   /* #FF5D5D */
+.ph--dark-red { background: var(--brand-4); }   /* #4D0000 */
+.ph--grey     { background: var(--elements-20); }
+
+/* Жанровая обложка: буква на цветном фоне */
+.genre {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: var(--brand-1);
+  color: var(--brand-4);
+  border-radius: 8px;
+  font-family: var(--font-books);
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* ============================================================
+   Прелоадер (skeleton) — состояние загрузки.
+   Ставится классом .snip--loading на карточку.
+   ============================================================ */
+.snip--loading { pointer-events: none; }
+.snip--loading .snip__cover,
+.snip--loading .snip__title,
+.snip--loading .snip__subtitle,
+.snip--loading .snip__badge {
+  background: var(--elements-10);
+  color: transparent;
+  border-radius: 6px;
+  animation: snip-skeleton 1.2s ease-in-out infinite;
+}
+.snip--loading .snip__title    { width: 70%; height: 14px; }
+.snip--loading .snip__subtitle { width: 45%; height: 12px; }
+.snip--loading .snip__badge    { width: 56px; }
+
+@keyframes snip-skeleton {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
