@@ -136,17 +136,8 @@
 .snip__add { width: 24px; height: 24px; color: var(--elements); }
 .snip__add:hover { color: var(--elements-60); }
 
-/* Шеврон «вправо» — на CSS (в core-наборе иконок стрелки нет) */
+/* Шеврон «вправо» — иконка 24 из компонента Icon (<span class="icon icon-chevron-right">) */
 .snip__chevron { width: 24px; height: 24px; color: var(--elements-40); }
-.snip__chevron::after {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(-45deg);
-  margin-left: -3px;
-}
 .snip:hover .snip__chevron { color: var(--elements-60); }
 
 /* Кнопка «Выбрать» (бумажная книга) — secondary 32px, из компонента Button */

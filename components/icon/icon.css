@@ -32,6 +32,7 @@
 .icon-book-outline { --icon: url("svg/book-outline.svg"); }
 .icon-bookmark-fill { --icon: url("svg/bookmark-fill.svg"); }
 .icon-bookmark-outline { --icon: url("svg/bookmark-outline.svg"); }
+.icon-chevron-right { --icon: url("svg/chevron-right.svg"); }
 .icon-dislike-fill { --icon: url("svg/dislike-fill.svg"); }
 .icon-dislike-outline { --icon: url("svg/dislike-outline.svg"); }
 .icon-download-fill { --icon: url("svg/download-fill.svg"); }
